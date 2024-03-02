@@ -5,26 +5,24 @@
 class Audax < Formula
   desc "TUI tools for AWS administration"
   homepage "https://dynamobrowse.app/"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
   depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/lmika/dynamo-browse/releases/download/v0.3.0/dynamo-browse_0.3.0_darwin_arm64.tar.gz"
-      sha256 "6fcf10382b0e44ceaf64c0a51d3f9c9ab2e69739885ebb180b88abe8007c78d0"
+  if Hardware::CPU.arm?
+    url "https://github.com/lmika/dynamo-browse/releases/download/v0.4.0/dynamo-browse_0.4.0_darwin_arm64.tar.gz"
+    sha256 "85cae6931fade2fe20e19356167a922702944e46581dde6c2c33ece0862dd797"
 
-      def install
-        bin.install "dynamo-browse"
-      end
+    def install
+      bin.install "dynamo-browse"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/lmika/dynamo-browse/releases/download/v0.3.0/dynamo-browse_0.3.0_darwin_amd64.tar.gz"
-      sha256 "c37dc467f683432eec36f0f5560aecdaf18d00cb58b0fae2b63a2b02893e19b5"
+  end
+  if Hardware::CPU.intel?
+    url "https://github.com/lmika/dynamo-browse/releases/download/v0.4.0/dynamo-browse_0.4.0_darwin_amd64.tar.gz"
+    sha256 "af7535ab5c264e94778d8fc9293f889b3146ecb1a97cdab57a13dc1ef8400ad1"
 
-      def install
-        bin.install "dynamo-browse"
-      end
+    def install
+      bin.install "dynamo-browse"
     end
   end
 end
